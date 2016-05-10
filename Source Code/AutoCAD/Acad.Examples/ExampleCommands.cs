@@ -23,6 +23,7 @@
 // AutoCAD queries the application's assembly for one or more CommandClass attributes. 
 // If instances of this attribute are found, AutoCAD searches only their associated types 
 // for command methods. Otherwise, it searches all exported types.
+
 [assembly: Autodesk.AutoCAD.Runtime.CommandClass(typeof(Kab.Acad.Examples.ExampleCommands))]
 
 namespace Kab.Acad.Examples
