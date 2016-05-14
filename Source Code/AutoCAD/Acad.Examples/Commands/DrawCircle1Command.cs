@@ -27,44 +27,53 @@
 namespace Kab.Acad.Examples.Commands
 {
     using Autodesk.AutoCAD.ApplicationServices;
+    using Autodesk.AutoCAD.Colors;
+    using Autodesk.AutoCAD.DatabaseServices;
+    using Autodesk.AutoCAD.EditorInput;
+    using Autodesk.AutoCAD.Geometry;
+    using Autodesk.AutoCAD.GraphicsInterface;
     using Autodesk.AutoCAD.Internal;
+    using Autodesk.AutoCAD.Runtime;
+    using Autodesk.AutoCAD.Windows;
 
     using Kab.Acad.Core.Commands;
 
-    internal class DrawCircle : ButtonCommand, IAcadCommand
+    using Utils = Kab.Acad.Core.Utils;
+
+    internal class DrawCircle1Command : ButtonCommand, IAcadCommand
     {
         /// <summary>
-        /// Gets the command.
+        ///     Gets the command.
         /// </summary>
         /// <value>The command.</value>
         public string Command => "KABCIRCLE";
 
         /// <summary>
-        /// Gets the command description.
+        ///     Gets the command description.
         /// </summary>
         /// <value>The description.</value>
         public string Description => "Creates a circle.";
 
         /// <summary>
-        /// Gets the command display name.
+        ///     Gets the command display name.
         /// </summary>
         /// <value>The display name.</value>
         public string DisplayName => "Circle";
 
         /// <summary>
-        /// Gets the command long description.
+        ///     Gets the command long description.
         /// </summary>
         /// <value>The long description.</value>
         public string LongDescription => "For Example.";
 
         /// <summary>
-        /// Executes the specified parameter.
+        ///     Executes the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
         public override void Execute(object parameter)
         {
-            Application.DocumentManager.MdiActiveDocument.Editor.WriteMessage("\nNot yet implemented.");
-            Utils.PostCommandPrompt();
+            Utils.WriteMessage("\nNot yet implemented.");
+            Autodesk.AutoCAD.Internal.Utils.PostCommandPrompt();
         }
     }
 }

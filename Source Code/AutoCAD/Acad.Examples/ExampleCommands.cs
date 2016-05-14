@@ -29,24 +29,31 @@
 namespace Kab.Acad.Examples
 {
     using Autodesk.AutoCAD.ApplicationServices;
+    using Autodesk.AutoCAD.Colors;
+    using Autodesk.AutoCAD.DatabaseServices;
+    using Autodesk.AutoCAD.EditorInput;
+    using Autodesk.AutoCAD.Geometry;
+    using Autodesk.AutoCAD.GraphicsInterface;
+    using Autodesk.AutoCAD.Internal;
     using Autodesk.AutoCAD.Runtime;
+    using Autodesk.AutoCAD.Windows;
 
     using Kab.Acad.Examples.Commands;
-    using Kab.Net.Core.Miscellaneous;
 
     public class ExampleCommands
     {
-        [CommandMethod("KABLINE")]
-        public void DrawLineCommand()
+        [CommandMethod("KABLINE1")]
+        public void DrawLine1Command()
         {
-            Singleton<DrawLine>.Instance.Execute(Application.DocumentManager.MdiActiveDocument);
+            DrawLine1Command lineCommand = new DrawLine1Command();
+            lineCommand.Execute();
         }
 
         [CommandMethod("KABCIRCLE")]
-        public void DrawCircleCommand()
+        public void DrawCircle1Command()
         {
-            Singleton<DrawCircle>.Instance.Execute(Application.DocumentManager.MdiActiveDocument);
+            DrawCircle1Command circleCommand = new DrawCircle1Command();
+            circleCommand.Execute();
         }
-
     }
 }

@@ -64,6 +64,14 @@ namespace Kab.Acad.Core.Commands
         /// <param name="parameter">The parameter.</param>
         public abstract void Execute(object parameter);
 
+        /// <summary>
+        /// Executes the command in the current document.
+        /// </summary>
+        public void Execute()
+        {
+            Execute(Core.Utils.Db);
+        }
+
         #endregion Public Methods
 
         #region Protected Methods

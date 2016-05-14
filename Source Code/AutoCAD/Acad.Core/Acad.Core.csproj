@@ -81,6 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\ButtonCommand.cs" />
+    <Compile Include="Extensions\EntityExtensions.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Commands\IAcadCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

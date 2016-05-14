@@ -80,8 +80,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\DrawCircle.cs" />
-    <Compile Include="Commands\DrawLine.cs" />
+    <Compile Include="Commands\DrawCircle1Command.cs" />
+    <Compile Include="Commands\DrawLine1Command.cs" />
     <Compile Include="ExampleCommands.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
