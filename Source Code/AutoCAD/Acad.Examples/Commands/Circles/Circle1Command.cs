@@ -24,10 +24,8 @@
 // If instances of this attribute are found, AutoCAD searches only their associated types 
 // for command methods. Otherwise, it searches all exported types.
 
-namespace Kab.Acad.Examples.Commands
+namespace Kab.Acad.Examples.Commands.Circles
 {
-    using System;
-
     using Autodesk.AutoCAD.ApplicationServices;
     using Autodesk.AutoCAD.Colors;
     using Autodesk.AutoCAD.DatabaseServices;
@@ -35,72 +33,47 @@ namespace Kab.Acad.Examples.Commands
     using Autodesk.AutoCAD.Geometry;
     using Autodesk.AutoCAD.GraphicsInterface;
     using Autodesk.AutoCAD.Internal;
+    using Autodesk.AutoCAD.Runtime;
     using Autodesk.AutoCAD.Windows;
 
     using Kab.Acad.Core.Commands;
-    using Kab.Acad.Core.Extensions;
 
-    using CadAp = Autodesk.AutoCAD.ApplicationServices;
-    using CadClr = Autodesk.AutoCAD.Colors;
-    using CadDb = Autodesk.AutoCAD.DatabaseServices;
-    using CadEd = Autodesk.AutoCAD.EditorInput;
-    using CadGe = Autodesk.AutoCAD.Geometry;
-    using CadGi = Autodesk.AutoCAD.GraphicsInterface;
-    using CadIn = Autodesk.AutoCAD.Internal;
-    using CadRx = Autodesk.AutoCAD.Runtime;
-    using CadWnd = Autodesk.AutoCAD.Windows;
-    using CadApplication = Autodesk.AutoCAD.ApplicationServices.Application;
+    using Utils = Kab.Acad.Core.Utils;
 
-    internal class DrawLine1Command : ButtonCommand, IAcadCommand
+    internal class Circle1Command : ButtonCommand, IAcadCommand
     {
         /// <summary>
         ///     Gets the command.
         /// </summary>
         /// <value>The command.</value>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public string Command => "KABLINE1";
+        public string Command => "KABCIRCLE";
 
         /// <summary>
         ///     Gets the command description.
         /// </summary>
         /// <value>The description.</value>
-        public string Description => "Creates straight line segment.";
+        public string Description => "Creates a circle.";
 
         /// <summary>
         ///     Gets the command display name.
         /// </summary>
         /// <value>The display name.</value>
-        public string DisplayName => "Line";
+        public string DisplayName => "Circle";
 
         /// <summary>
         ///     Gets the command long description.
         /// </summary>
         /// <value>The long description.</value>
-        public string LongDescription => $"With {this.DisplayName}, you can create a line segment from the origin to the point 10,0,0.";
+        public string LongDescription => "For Example.";
 
         /// <summary>
         ///     Executes the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
-        /// <exception cref="System.NotImplementedException"></exception>
         public override void Execute(object parameter)
         {
-            Point3d startPoint = Point3d.Origin;
-            Point3d endPoint = new Point3d(10, 0, 0);
-            Core.Utils.WriteMessage("\nCreating a line from {0} to {1}", startPoint, endPoint);
-            try
-            {
-                Line line = new Line(new Point3d(0, 0, 0), new Point3d(10, 0, 0));
-                line.AddToModelSpace();
-            }
-            catch (Exception ex)
-            {
-                Core.Utils.WriteMessage("\nUnable to create the line.  Error: {0}", ex.Message);
-            }
-            finally
-            {
-                CadIn.Utils.PostCommandPrompt();
-            }
+            Utils.WriteMessage("\nNot yet implemented.");
+            Autodesk.AutoCAD.Internal.Utils.PostCommandPrompt();
         }
     }
 }
